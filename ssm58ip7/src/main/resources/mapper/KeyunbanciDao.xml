@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.KeyunbanciDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.KeyunbanciEntity" id="keyunbanciMap">
+        <result property="bancimingcheng" column="bancimingcheng"/>
+        <result property="bancileixing" column="bancileixing"/>
+        <result property="cheliangbianhao" column="cheliangbianhao"/>
+        <result property="cheliangmingcheng" column="cheliangmingcheng"/>
+        <result property="chepaihao" column="chepaihao"/>
+        <result property="cheliangzhaopian" column="cheliangzhaopian"/>
+        <result property="chufazhan" column="chufazhan"/>
+        <result property="daodazhan" column="daodazhan"/>
+        <result property="facheshijian" column="facheshijian"/>
+        <result property="piaojia" column="piaojia"/>
+        <result property="yijingfache" column="yijingfache"/>
+        <result property="tujingzhandian" column="tujingzhandian"/>
+        <result property="gengxinshijian" column="gengxinshijian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.KeyunbanciVO" >
+		SELECT * FROM keyunbanci  keyunbanci         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.KeyunbanciVO" >
+		SELECT  keyunbanci.* FROM keyunbanci  keyunbanci
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.KeyunbanciView" >
+
+		SELECT  keyunbanci.* FROM keyunbanci  keyunbanci 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.KeyunbanciView" >
+		SELECT * FROM keyunbanci  keyunbanci <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
